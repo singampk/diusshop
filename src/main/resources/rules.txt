@@ -1,0 +1,3 @@
+for atv size = 3, discount 1
+if ipd size > 4, newprice 499.99
+if mdp size >= 1, free vga

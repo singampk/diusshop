@@ -8,6 +8,11 @@ package au.com.dius.shop.cart;
  */
 public class RulesEngine implements Engine {
 
+    public Rules rules;
+
+    RulesEngine() {
+        createEngine();
+    }
 
     public Engine createEngine() {
 
@@ -17,4 +22,10 @@ public class RulesEngine implements Engine {
     public void processEngine() {
 
     }
+
+    public void loadEngineConfigs() {
+
+    }
+
+
 }

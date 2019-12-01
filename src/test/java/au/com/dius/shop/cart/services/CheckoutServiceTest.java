@@ -12,8 +12,7 @@ public class CheckoutServiceTest {
 
     @Before
     public void init() {
-        RulesEngine rulesEngine = new RulesEngine();
-        Engine engine = rulesEngine.createEngine();
+        Engine engine = new RulesEngine();
     }
 
     /**
@@ -27,6 +26,6 @@ public class CheckoutServiceTest {
         cs.scan(item1);
         cs.scan(item2);
 
-        Assert.assertEquals(249,  cs.total());
+        Assert.assertEquals(249, cs.total());
     }
 }

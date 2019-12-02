@@ -34,6 +34,15 @@ public class Rules {
     }
 
 
+    /**
+     * processing the expression
+     *
+     * @param scannedItem
+     * @param words
+     * @param items
+     * @param expression
+     * @param cart
+     */
     private void processExp(Item scannedItem, String[] words, List<Item> items, Expression expression, Cart cart) {
         String item = words[0];
         StaticLoadItemsServiceImpl itemsService = StaticLoadItemsServiceImpl.getInstance();
@@ -60,6 +69,13 @@ public class Rules {
         //}
     }
 
+    /**
+     * action to respond
+     *
+     * @param expression
+     * @param cart
+     * @param scannedItem
+     */
     private void applyAction(Expression expression, Cart cart, Item scannedItem) {
         String action = expression.getAction();
         String[] words = action.trim().split("\\s+");
@@ -72,6 +88,12 @@ public class Rules {
         }
     }
 
+    /**
+     * adding discount
+     *
+     * @param cart
+     * @param item
+     */
     private void addDiscount(Cart cart, Item item) {
         item.setDiscountedPrice(new BigDecimal(0).setScale(2, RoundingMode.HALF_UP));
         List<Item> allApplicableItems = cart.getCartItemMap().get(item.getSku());
@@ -80,6 +102,13 @@ public class Rules {
         });
     }
 
+    /**
+     * updating new price
+     *
+     * @param cart
+     * @param item
+     * @param newPrice
+     */
     private void addNewPrice(Cart cart, Item item, String newPrice) {
         List<Item> allApplicableItems = cart.getCartItemMap().get(item.getSku());
         allApplicableItems.forEach(i -> {
@@ -88,6 +117,13 @@ public class Rules {
         });
     }
 
+    /**
+     * adding free item
+     *
+     * @param cart
+     * @param item
+     * @param itemStr
+     */
     private void addFreeItem(Cart cart, Item item, String itemStr) {
         List<Item> allApplicableItems = cart.getCartItemMap().get(item.getSku());
         if (cart.getCartItemMap().get(itemStr) != null && !cart.getCartItemMap().get(itemStr).isEmpty()) {

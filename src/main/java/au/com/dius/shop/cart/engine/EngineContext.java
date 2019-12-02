@@ -19,9 +19,11 @@ public class EngineContext implements IEngineContext {
         return cart;
     }
 
+    public void setCart(Cart cart) {
+        this.cart = cart;
+    }
+
     public RulesEngine getEngine() {
         return engine;
     }
-
-    public void setCart(Cart cart) { this.cart = cart; }
 }

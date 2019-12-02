@@ -121,7 +121,8 @@ public class CheckoutServiceTest {
         cs.scan(vga);
         cs.scan(vga);
         cs.revertScan(vga);
+        cs.scan(mbp);
 
-        Assert.assertEquals(new BigDecimal(249.00).setScale(2, RoundingMode.HALF_UP), cs.total());
+        Assert.assertEquals(new BigDecimal(1618.99).setScale(2, RoundingMode.HALF_UP), cs.total());
     }
 }

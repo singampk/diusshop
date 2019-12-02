@@ -21,6 +21,12 @@ public class CheckoutService {
         this.ec = ec;
     }
 
+    /**
+     * Scanning the item
+     *
+     * @param item
+     */
+
     public void scan(Item item) {
         RulesEngine rulesEngine = ec.getEngine();
         if (validateScan(item)) {
@@ -29,6 +35,14 @@ public class CheckoutService {
             rulesEngine.processEngine(ec, itemScanned);
         }
     }
+
+    /**
+     * Validate the scan to make sure the item been already
+     * added to the cart
+     *
+     * @param item
+     * @return
+     */
 
     private boolean validateScan(Item item) {
         Cart cart = ec.getCart();
@@ -44,16 +58,30 @@ public class CheckoutService {
         return true;
     }
 
+
+    /**
+     * To get the total value of the cart
+     *
+     * @return
+     */
     public BigDecimal total() {
         return ec.getCart().getTotal();
     }
 
+    /**
+     * Removing the item from the cart
+     *
+     * @param itemToBeRemoved
+     */
     public void revertScan(Item itemToBeRemoved) {
         ec.getCart().removeItem(itemToBeRemoved);
         rescanAllItems();
     }
 
-    public void rescanAllItems() {
+    /**
+     * to rescan all the items in the cart
+     */
+    private void rescanAllItems() {
         Cart cart = new Cart();
         Cart oldCart = ec.getCart();
         ec.setCart(cart);

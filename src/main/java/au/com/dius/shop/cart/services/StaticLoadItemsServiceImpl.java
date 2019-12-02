@@ -7,6 +7,11 @@ import java.util.Map;
 
 import au.com.dius.shop.cart.Item;
 
+/**
+ * This service is one the implementations to load
+ * the items hard coded
+ */
+
 public class StaticLoadItemsServiceImpl implements LoadItemsService {
 
     private static StaticLoadItemsServiceImpl staticLoadItemsService;

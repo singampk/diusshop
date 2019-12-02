@@ -8,12 +8,16 @@ import au.com.dius.shop.cart.Cart;
 import au.com.dius.shop.cart.Item;
 import au.com.dius.shop.cart.services.StaticLoadItemsServiceImpl;
 
+/**
+ * Actual rule evaluation functions, this a basic rules evaluator
+ * with some hardcoded variables, however this same this can be achieved
+ * by building new expression language processor engine.
+ */
+
 public class Rules {
 
     /**
-     * Actual rule evaluation functions, this a basic rules evaluator
-     * with some hardcoded variables, however this same this can be achieved
-     * by building new expression language processor engine.
+     * Evaluating the rules on scanned item
      *
      * @param scannedItem Item scanned
      * @param items       Items that already scanned

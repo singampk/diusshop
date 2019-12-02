@@ -2,6 +2,9 @@ package au.com.dius.shop.cart.engine;
 
 import au.com.dius.shop.cart.Cart;
 
+/**
+ * EngineContext will manage the state of the request
+ */
 public class EngineContext implements IEngineContext {
 
     private RulesEngine engine;

@@ -1,5 +1,8 @@
 package au.com.dius.shop.cart.rules;
 
+/**
+ * Expression keeps the rule and action
+ */
 public class Expression {
 
     private String expression;

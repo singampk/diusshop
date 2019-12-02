@@ -49,7 +49,7 @@ public class RulesEngine {
                     if( validateExpressions(line)) {
                         expressions.add(new Expression(line));
                     } else {
-                        //Raise a exception
+                        //Raise an exception
                     }
                 }
             }
@@ -61,8 +61,7 @@ public class RulesEngine {
 
     //This regex has to move out of the the method
     public static boolean validateExpressions(String exp) {
-        //(^atv|ipd|mbp|vga) size (=|>|<) ([0-9]), (discount|free|newprice) (atv|ipd|mbp|vga|\d+(\.\d{1,2})?)
-        Pattern p = Pattern.compile(regex);//. represents single character
+        Pattern p = Pattern.compile(regex);
         Matcher m = p.matcher(exp);
         return m.matches();
     }

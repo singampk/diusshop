@@ -1,5 +1,8 @@
 package au.com.dius.shop.cart.rules;
 
+/**
+ * Symbols to manage the keywords
+ */
 public enum Symbols {
     _eq ("="), _graterthan(">"), _for ("for"), _if ("if"), _lessthan ("<"),
     _newprice ("newprice"), _discount ("discount"), _size ("size"), _free("free");

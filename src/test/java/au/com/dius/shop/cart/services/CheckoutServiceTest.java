@@ -101,5 +101,27 @@ public class CheckoutServiceTest {
 
     }
 
+    /**
+     * Test case to check remove and rescan the sku
+     */
+    @Test
+    public void test_checkout_when_an_item_is_removed() {
 
+        Map<String, List<Item>> cartItems = new HashMap<String, List<Item>>();
+
+        Cart cart = new Cart()
+                .withCartItems(cartItems);
+
+        EngineContext ec = new EngineContext(rulesEngine, cart);
+        CheckoutService cs = new CheckoutService(ec);
+
+        cs.scan(atv);
+        cs.scan(atv);
+        cs.scan(atv);
+        cs.scan(vga);
+        cs.scan(vga);
+        cs.revertScan(vga);
+
+        Assert.assertEquals(new BigDecimal(249.00).setScale(2, RoundingMode.HALF_UP), cs.total());
+    }
 }
